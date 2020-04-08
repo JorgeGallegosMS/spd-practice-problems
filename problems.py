@@ -23,23 +23,25 @@ def find_duplicates(num_list):
 
 word = "pneumonoultramicroscopicsilicovolcanoconiosis"
 
-def longest_string(str):
+def longest_substring(str):
 	words = []
 	longest_index = 0
 	for i in range(len(str)):
 		new_word = []
-		for j in range(len(str)):
-			if i != j and str[j] not in new_word:
+		for j in range(i, len(str)):
+			if str[j] not in new_word:
 				new_word.append(str[j])
 			else:
-				words.append(''.join(new_word))
+				break
+
+		words.append(''.join(new_word))
 
 	for index in range(len(words)):
-		if len(word) >= len(words[longest_index]):
+		if len(words[longest_index]) > len(words[index]):
 			continue
 		else:
 			longest_index = index
 
 	return words[longest_index]
 
-print(longest_string(word))
+print(longest_substring(word))
