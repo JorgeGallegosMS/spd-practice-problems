@@ -14,8 +14,8 @@ def find_duplicates(num_list):
 
 	return None
 
-# print(find_duplicates(nums1))
-# print(find_duplicates(nums2))
+print(find_duplicates(nums1))
+print(find_duplicates(nums2))
 
 #################################
 
@@ -24,11 +24,12 @@ def find_duplicates(num_list):
 word = "pneumonoultramicroscopicsilicovolcanoconiosis"
 
 def longest_substring(str):
+	length = len(str)
 	words = []
 	longest_index = 0
-	for i in range(len(str)):
+	for i in range(length):
 		new_word = []
-		for j in range(i, len(str)):
+		for j in range(i, length):
 			if str[j] not in new_word:
 				new_word.append(str[j])
 			else:
@@ -36,7 +37,7 @@ def longest_substring(str):
 
 		words.append(''.join(new_word))
 
-	for index in range(len(words)):
+	for index in range(length):
 		if len(words[longest_index]) > len(words[index]):
 			continue
 		else:
